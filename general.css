@@ -1,0 +1,85 @@
+/*
+
+            a CODE & DESIGN by
+              @lukasztyrala
+
+                 _....._
+               ,'.-._.-.`.
+               |(       )|
+               \|--, ,..|/
+               ([_o)-(o_])
+        lt.     ## ._, ##
+                 ##*"*##
+               _.|"***"|._
+           .-'` `-.....-` `'-.
+          /'.               ,'\
+         l   :             :   l
+         |   /             \   |
+         |   '             '   |
+         |.-------------------.|
+  -------\ \        ,        / /-------
+          L \       C       / J
+             "=============" 
+
+*/
+
+html {
+  background: #fcfcfc;
+  color: #2e2e2e;
+  display: block;
+  font-size: 100%;
+}
+
+body {
+  font-family: "chaparral-pro", serif;
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  margin: 5% 10%;
+  text-align: left;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.4rem;
+  max-width: 40rem;
+  text-align: left;
+  margin-bottom: 1.4rem;
+}
+
+p.lede {
+  font-size: 2rem;
+  line-height: 2.6rem;
+  margin-bottom: 2.6rem;
+}
+
+p.info {
+  margin-top: 2.6rem;
+  clear: both;
+  display: block;
+}
+
+b {
+  font-weight: 400;
+}
+
+a {
+  color: red;
+  display: inline-block;
+  font-size: 3rem;
+  line-height: 4rem;
+  height: 4rem;
+  width: 5rem;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+a:hover {
+  opacity: .8;
+}
+
+footer {
+  font-size: 1rem;
+  color: #a1a1a1;
+}
