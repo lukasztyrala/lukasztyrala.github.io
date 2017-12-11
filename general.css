@@ -65,14 +65,7 @@ b {
 
 a {
   color: red;
-  display: inline-block;
-  font-size: 3rem;
-  line-height: 4rem;
-  height: 4rem;
-  width: 5rem;
-  text-align: center;
   text-decoration: none;
-  margin-right: 1rem;
 }
 
 a:hover {
