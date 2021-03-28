@@ -11,12 +11,6 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
-}
-
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -43,10 +37,11 @@ html {
 
 hr {
   display: block;
-  height: 1px;
+  height: .05rem;
   border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
+  border-top: 1px dashed #344760;
+  margin: 1.5rem 0;
+  opacity: .5;
   padding: 0;
 }
 
@@ -105,16 +100,37 @@ textarea {
              "=============" 
 */
 
+/* 
+ *  ,------------------------------------.
+ *  |       TYPOGRAPY + LAYOUT           |
+ *  '------------------------------------'
+ */
+
+/* BREAKPOINTS
+
+@media only screen and (max-width:  480px)  {  }
+@media only screen and (min-width:  800px)  {  }
+@media only screen and (min-width: 1280px)  {  }
+@media only screen and (min-width: 1440px)  {  }
+
+ */
+
+
 html {
   font-family: "chaparral-pro", Georgia, serif;
-  font-size: 1.5rem;
+  font-size: 100%; /* Assumed 16px */
   font-weight: 300;
-  line-height: 1.5;
+  line-height: 1.5rem;
   padding: 1.5rem;
 }
 
+@media only screen and (max-width:  480px)  { html { font-size: 100%; } }
+@media only screen and (min-width:  800px)  { html { font-size: 115%; } }
+@media only screen and (min-width: 1280px)  { html { font-size: 130%; padding-top: 3rem; } }
+@media only screen and (min-width: 1440px)  { html { font-size: 150%; padding-top: 6rem; } }
+
 html.light-theme {
-  background: #fcfcfc;
+  background: #fbf9e7;
   color: #2e2e2e;
 }
 
@@ -123,18 +139,508 @@ html.dark-theme {
   color: #fcfcfc;
 }
 
-body {
-  margin: 1.5rem auto;
-  max-width: 40rem;
-}
-
-.curriculum p {
-  font-size: 0.75rem;
-}
-
-b {
+code, kbd, samp, var, pre {
+  background-color: #ededec;
+  border-radius: 0.2rem;
+  color: #555552;
+  font-family: "Source Code Pro", "Roboto Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  font-size: .75em;
+  font-style: normal;
   font-weight: 400;
+  padding: 0 0.2rem;
 }
+
+pre.ascii-art {
+  background-color: transparent;
+  line-height: 0.75rem;
+  font-size: 0.6rem;
+  width: 100%;
+}
+
+small {
+  font-size: .75rem;
+  line-height: 1rem;
+}
+
+mark {
+  background-color: #fcedcc;
+  border-radius: 0.2rem;
+  padding: 0 0.2rem 0.1rem 0.2rem;
+}
+
+abbr {
+  font-size: 0.9em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+abbr[title] {
+  font-size: 0.9em;
+  text-decoration-color: #a1c0cc;
+  text-decoration-style: wavy;
+  text-transform: uppercase;
+}
+
+del {
+  background-color: hsla(357, 31%, 45%, .15);
+  border-radius: 0.2rem;
+  color: #555552;
+  padding: 0 0.2rem 0.1rem 0.2rem;
+  text-decoration: line-through;
+  text-decoration-color: hsla(357, 31%, 45%, .5);
+  text-decoration-style: wavy;
+}
+
+del.replace-r {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+del.replace-l {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+ins {
+  background-color: hsla(208, 33%, 44%, .15);
+  border-radius: 0.2rem;
+  font-style: italic;
+  padding: 0 0.2rem 0.1rem 0.2rem;
+  text-decoration: none;
+}
+
+ins.replace-r {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+ins.replace-l {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+a {  
+  color: #3d7499;
+  text-decoration-color: #a1c0cc;
+}
+
+.page-content a {
+  padding-left: 0.05rem;
+  padding-right: 0.05rem;
+}
+
+.page-content img {
+  max-width: 100%;
+}
+
+a:link {
+  color: #3d7499;
+}
+
+a:visited {
+  color: #223e5d;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #223e5d;
+  text-decoration: none;
+}
+
+.page-content a:hover {
+  background-color: #a1c0cc;
+  border-radius: 0.125rem;
+}
+
+a:active {
+  color: #a1c0cc;
+  text-decoration: none;
+} 
+
+.page-content a:active {
+  background-color: #223e5d;
+}
+
+
+/* GRID */
+
+.page {
+  display: grid;
+  grid-template-columns: 4rem 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "head name name nav nav"
+    "head main main main main"
+    "foot footer footer footer footer";
+  grid-gap: 1.5rem;
+}
+
+@media only screen and (max-width:  480px)  { 
+  .page { 
+    grid-template-columns: 2fr 1fr; 
+    grid-template-areas: 
+      "head nav"
+      "name name"
+      "main main"
+      "footer footer"
+      "foot foot";
+    }
+}
+
+@media only screen and (min-width:  800px)  { 
+  .page {
+    grid-template-areas: 
+      "head name name name nav"
+      "head main main main ."
+      "foot footer footer footer .";
+  }
+}
+
+@media only screen and (min-width: 1280px)  { 
+  .page {
+    grid-template-areas: 
+      "head name name nav nav"
+      "head main main main ."
+      "foot footer footer footer .";
+  }
+}
+
+@media only screen and (min-width: 1440px)  {
+  .page {
+    grid-template-columns: .5fr 4rem .5fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    ". head . name name name nav nav"
+    ". head . main main main . ."
+    ". foot . footer footer footer . .";
+  }
+}
+
+.page-title {
+  grid-area: head;
+}
+
+.page-links {
+  grid-area: nav;
+}
+
+.page-name {
+  grid-area: name;
+}
+
+.page-content {
+  grid-area: main;
+}
+
+.page-footer {
+  grid-area: footer;
+}
+
+/* /GRID */
+
+h1  {  font-size: 2.5rem;  font-style: normal;  font-weight: 300;  line-height: 3.0rem;  margin: 6.0rem 0 1.5rem 0;  }
+h2  {  font-size: 2.0rem;  font-style: normal;  font-weight: 300;  line-height: 3.0rem;  margin: 3.0rem 0 1.5rem 0;  }
+h3  {  font-size: 1.5rem;  font-style: normal;  font-weight: 400;  line-height: 2.0rem;  margin: 2.0rem 0 1.5rem 0;  }
+h4  {  font-size: 1.0rem;  font-style: normal;  font-weight: 600;  line-height: 2.0rem;  margin: 2.0rem 0 1.5rem 0;  }
+h5  {  font-size: 1.0rem;  font-style: italic;  font-weight: 400;  line-height: 1.5rem;  margin: 1.5rem 0 1.5rem 0;  }
+h6  {  font-size: .75rem;  font-style: normal;  font-weight: 400;  line-height: 1.5rem;  margin: 1.5rem 0 1.5rem 0;  text-transform: uppercase;  }
+
+p, ul, ol, li, dl, dt, dd, blockquote {
+  font-size: 1.0rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+dt {
+  font-style: italic;
+  font-weight: bolder;
+}
+
+dd {
+  border-left: .2rem solid hsla(208, 33%, 44%, .15);
+  padding: .25rem 0 .25rem 1rem;
+  margin: .5rem 0 1rem 0;
+}
+
+ul, ol {
+  padding: 0;
+  list-style-position: outside;
+  font-size: .5rem;
+}
+
+li::marker {
+  font-size: .75rem;
+  color: #555552;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+p, ul, ol, dl, blockquote {
+  margin: 0 0 1.5rem 0;
+}
+
+blockquote  {  font-style: italic;  }
+
+p b {
+  font-weight: 600;
+}
+
+/* <figure> */
+
+figure  {
+  display: block;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+figure img {
+  border-radius: 0.5rem;
+  max-width: 100%;
+}
+
+figure span {
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 4rem;
+}
+
+figure figcaption {
+  font-size: 0.85em;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin: .5rem 0 0 0;
+}
+
+/* </figure> */
+
+/* <table> */
+
+table {
+  border-collapse: collapse;
+  margin: 0 0 1.5rem 0;
+  border: 0;
+  padding: 0;
+}
+
+table caption,
+table tfoot {
+  font-style: italic;
+  font-size: .85em;
+  text-align: left;
+}
+
+table tfoot {
+  border-top: .025rem solid hsla(208, 33%, 44%, .15);
+}
+
+table caption {
+  margin-bottom: 1rem;
+}
+
+tbody {
+  vertical-align: top;
+}
+
+thead tr {
+  border-bottom: .025rem solid hsla(208, 33%, 44%, .5);
+}
+
+tbody tr {
+  border-bottom: .015rem solid hsla(208, 33%, 44%, .25);
+}
+
+tbody tr:last-of-type {
+  border: 0;
+}
+
+th, td {
+  font-size: .9em;
+  line-height: 1rem;
+  text-align: left;
+  padding: .5rem 1rem .5rem 0;
+}
+
+th {
+  font-weight: bolder;
+}
+
+thead th {
+  font-style: italic;
+}
+
+thead .cardinal th {
+  text-transform: uppercase;
+}
+
+.tabular-data {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* </table> */
+
+header, nav, footer, section, article {
+  margin: 0;
+}
+
+section, article, canvas, source, audio, video, param, embed, iframe, area, object {
+  margin-bottom: 1.5rem;
+}
+
+iframe {
+  border: 0;
+}
+
+canvas, source, audio, video, embed, iframe, area, object {
+  width: 100%;
+  display: block;
+}
+
+/* 
+ *  ,------------------------------------.
+ *  |            COMPONENTS              |
+ *  '------------------------------------'
+ */
+
+.page-title,
+.page-links,
+.page-name,
+.page-content,
+.page-footer {
+  margin: 0;
+}
+
+/* ❡START */
+
+.page-title {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+@media only screen and (max-width:  480px)  { 
+  .page-title {
+    flex-direction: row;
+  }
+}
+
+.page-title .icon,
+.page-title .tagline {
+  align-self: center;
+}
+
+.page-title .tagline {
+  color: #223e5d;
+  font-size: 0.75rem;
+  font-style: italic;
+  line-height: 1rem;
+  margin: 0;
+  padding: 1rem;
+  writing-mode: vertical-rl;
+}
+
+@media only screen and (max-width:  480px)  { 
+  .page-title .tagline {
+    writing-mode: horizontal-tb;
+  }
+}
+
+/* ❡END */
+
+.page-name {
+  padding-top: .5rem;
+}
+
+/* ❡START */
+
+.page-title .icon {
+  background-color: transparent;
+  border-radius: 1rem;
+  display: inline-block;
+}
+
+@keyframes icon-rise {
+  0%   {  box-shadow: none;  top: 0; }
+  100% {  box-shadow: 0 0.25rem 1rem hsla(216, 25%, 29%, 0.30);  top: -0.125rem;  }
+}
+
+.page-title .icon:hover {
+  animation-delay: .01s;
+  animation-duration: .35s;
+  animation-fill-mode: both;
+  animation-name: icon-rise;
+  animation-timing-function: ease-out;
+  box-shadow: 0 0.25rem 2rem hsla(216, 25%, 29%, 0.30);
+  position: relative;
+}
+
+.page-title .icon img {
+  display: inline-block;
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+/* ❡END */
+
+/* ❡START */
+
+.page-links {
+  padding-top: 1.5rem;
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+@media only screen and (max-width:  480px)  { 
+  .page-links {
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (min-width:  800px)  {
+
+}
+
+@media only screen and (min-width: 1280px)  {
+
+}
+
+@media only screen and (min-width: 1440px)  {
+
+}
+
+/* ❡END */
+
+/* ❡START: C_HIGHLIGH */
+
+figure.highlight {
+  display: block;
+  background-color: #fcedcc;
+  border-radius: 0.5rem;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  margin: 0 auto;
+}
+
+figure.highlight:nth-of-type(odd) {
+  margin: 0 3rem 1.5rem 0;
+  float: left;
+  text-align: left;
+}
+
+figure.highlight:nth-of-type(even) {
+  margin: 0 0 1.5rem 3rem;
+  float: right;
+  text-align: right;
+}
+
+/* ❡END */
+
 
 /* ==========================================================================
    Helper classes
@@ -223,10 +729,6 @@ b {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
 
 @media print,
   (-webkit-min-device-pixel-ratio: 1.25),
