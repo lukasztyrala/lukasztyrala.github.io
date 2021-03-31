@@ -762,6 +762,12 @@ nav a.current.icon svg {
   justify-content: center;
 }
 
+@media only screen and (max-width:  480px)  { 
+  .page-foot {
+    justify-content: flex-start;
+  }
+}
+
 .page-foot a {
   display: inline-block;
   width: 2rem;
@@ -799,6 +805,12 @@ nav a.current.icon svg {
 .page-meta p {
   margin-top: .25rem;
   text-align: center;
+}
+
+@media only screen and (max-width:  480px)  { 
+  .page-meta p {
+    text-align: right;
+  }
 }
 
 /* .love */
