@@ -277,6 +277,13 @@ p, ul, ol, li, dl, dt, dd, blockquote {
   line-height: 1.5rem;
 }
 
+p.lead {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 2rem;
+}
+
 dt {
   font-style: italic;
   font-weight: bolder;
@@ -301,6 +308,14 @@ li::marker {
 
 ul {
   list-style-type: circle;
+}
+
+.roman {
+ list-style-type: lower-roman;
+}
+
+.stand-alone-items li {
+  margin-bottom: 1.5rem;
 }
 
 p, ul, ol, dl, blockquote {
@@ -459,10 +474,11 @@ canvas, source, audio, video, embed, iframe, area, object {
   grid-template-areas: 
     "head nav nav nav nav"
     "head name name name ."
+    "head intro intro intro ."
     "head main main main ."
     "foot footer footer meta .";
   grid-template-columns: 4rem 1fr 1fr 1fr 4rem;
-  grid-template-rows: auto;
+  grid-template-rows: min-content min-content auto;
   grid-gap: 1.5rem;
 }
 
@@ -472,6 +488,7 @@ canvas, source, audio, video, embed, iframe, area, object {
       "head head"
       "nav nav"
       "name name"
+      "intro intro"
       "main main"
       "footer footer"
       "foot meta";
@@ -483,6 +500,7 @@ canvas, source, audio, video, embed, iframe, area, object {
   .page {
     grid-template-areas: 
       "head name name name name nav"
+      "head intro intro intro nav"
       "head main main main main nav"
       "foot footer footer footer footer meta";
     grid-template-columns: 4rem 1fr 1fr 1fr 1fr 1.5fr;
@@ -493,6 +511,7 @@ canvas, source, audio, video, embed, iframe, area, object {
   .page {
     grid-template-areas: 
       "head . name name name name . nav"
+      "head . intro intro intro intro . nav"
       "head . main main main main . nav"
       "foot . footer footer footer footer . meta";
     grid-template-columns: 4rem .25fr 1fr 1fr 1fr 1fr .25fr 1.5fr;
@@ -503,6 +522,7 @@ canvas, source, audio, video, embed, iframe, area, object {
   .page {
     grid-template-areas: 
       ". head . name name name name . nav ."
+      ". head . intro intro intro intro . nav ."
       ". head . main main main main . nav ."
       ". foot . footer footer footer footer . meta .";
     grid-template-columns: .25fr 4rem .25fr 1fr 1fr 1fr 1fr .25fr 1.5fr .25fr;
@@ -519,6 +539,10 @@ canvas, source, audio, video, embed, iframe, area, object {
 
 .page-name {
   grid-area: name;
+}
+
+.page-intro {
+  grid-area: intro;
 }
 
 .page-content {
@@ -540,11 +564,18 @@ canvas, source, audio, video, embed, iframe, area, object {
 .page-title,
 .page-links,
 .page-name,
+.page-intro,
 .page-content,
 .page-foot,
 .page-footer,
 .page-meta {
   margin: 0;
+}
+
+.page-name *:last-child,
+.page-intro *:last-child,
+.page-content *:last-child {
+  margin-bottom: 0;
 }
 
 .page-title {
@@ -640,8 +671,8 @@ canvas, source, audio, video, embed, iframe, area, object {
   }
 }
 
-.page-content {
-  border-bottom: .05rem solid hsla(216, 25%, 29%, 0.25);
+.page-footer {
+  border-top: .025rem solid hsla(216, 25%, 29%, 0.25);
 }
 
 .page-footer .elsewhere {
