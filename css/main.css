@@ -500,7 +500,7 @@ canvas, source, audio, video, embed, iframe, area, object {
   .page {
     grid-template-areas: 
       "head name name name name nav"
-      "head intro intro intro nav"
+      "head intro intro intro intro nav"
       "head main main main main nav"
       "foot footer footer footer footer meta";
     grid-template-columns: 4rem 1fr 1fr 1fr 1fr 1.5fr;
