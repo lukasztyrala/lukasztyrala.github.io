@@ -844,6 +844,26 @@ nav a.current.icon svg {
   }
 }
 
+/* .clock */
+
+.minimal-clock {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.minimal-clock svg {
+  /*
+  background-color: #fcedcc;
+  */
+  border: 2px solid #fcedcc;
+  border-radius: 48px;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* /.clock */
+
 /* .love */
 
 @keyframes heartbeat {
