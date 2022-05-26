@@ -911,6 +911,11 @@ figure.highlight:nth-of-type(even) {
 
 /* /figure.highlight */
 
+figure iframe {
+  border-radius: 0.5rem;
+  margin: 0;
+}
+
 
 /* ==========================================================================
    Helper classes
