@@ -858,6 +858,36 @@ nav a.current.icon svg {
   }
 }
 
+/* .excerpts */
+
+article.excerpt {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+article.excerpt h4 {
+  grid-column: 1;
+  line-height: 1.5rem;
+  margin-top: 0;
+}
+
+article.excerpt p {
+  grid-column-end: -1;
+  grid-column-start: -4;
+  margin-top: 0;
+}
+
+article.excerpt p a {
+  padding: .1rem .25rem 0 .25rem;
+  position: relative;
+  text-decoration: none;
+  top: .1rem;
+}
+
+
+/* /.excerpts */
+
 /* .clock */
 
 .minimal-clock {
