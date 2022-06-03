@@ -866,6 +866,12 @@ article.excerpt {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+@media only screen and (max-width:  480px)  { 
+  article.excerpt { 
+    grid-template-columns: 1fr 1fr 1fr; 
+    }
+}
+
 article.excerpt h4 {
   grid-column: 1;
   line-height: 1.5rem;
@@ -876,6 +882,13 @@ article.excerpt p {
   grid-column-end: -1;
   grid-column-start: -4;
   margin-top: 0;
+}
+
+@media only screen and (max-width: 800px)  { 
+  article.excerpt p { 
+    grid-column-end: -1;
+    grid-column-start: -3;
+    }
 }
 
 article.excerpt p a {
