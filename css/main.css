@@ -129,14 +129,14 @@ html.light-theme {
 }
 
 code, kbd, samp, var, pre {
-  background-color: #ededec;
+  background-color: #f4eede;
   border-radius: 0.2rem;
   color: #555552;
   font-family: "Source Code Pro", "Roboto Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
   font-size: .75em;
   font-style: normal;
   font-weight: 400;
-  padding: 0 0.2rem;
+  padding: 0.05rem 0.2rem;
 }
 
 pre.ascii-art {
