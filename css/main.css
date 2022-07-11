@@ -341,11 +341,9 @@ p, ul, ol, dl, blockquote {
 }
 
 blockquote {
-  border-bottom: .2rem solid hsla(208, 33%, 44%, .15);
-  border-top: .2rem solid hsla(208, 33%, 44%, .15);
+  border-left: .2rem solid hsla(208, 33%, 44%, .15);
   font-style: italic;
-  padding-top: 1.3rem;
-  padding-bottom: 1.3rem;
+  padding-left: 1.3rem;
 }
 
 p b {
