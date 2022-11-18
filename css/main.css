@@ -911,14 +911,17 @@ article.excerpt p a {
 }
 
 .minimal-clock svg {
-  /*
   background-color: #fcedcc;
-  */
   border: 2px solid #fcedcc;
-  border-radius: 48px;
+  border-radius: 1rem;
   display: inline-block;
   margin: 0 auto;
   text-align: center;
+}
+
+.page-intro .minimal-clock {
+  float: right;
+  margin-left: 1rem;
 }
 
 /* /.clock */

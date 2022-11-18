@@ -115,7 +115,9 @@
 
 <!-- .page-intro %4 -->
   <div class="page-intro">
-    
+    <p class="lead">
+      Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
+    </p>
   </div>
 <!-- /.page-intro -->
 
@@ -455,12 +457,30 @@
         </defs>
         <script  type="text/javascript">
         <![CDATA[
-            var date = new Date;
-            var seconds = date.getSeconds();
-            var minutes = date.getMinutes();
-            var hours = date.getHours();
+
+            function changeTimeZone(date, timeZone) {
+              if (typeof date === 'string') {
+                return new Date(
+                  new Date(date).toLocaleString('en-US', {
+                    timeZone,
+                  }),
+                );
+              }
+            
+              return new Date(
+                date.toLocaleString('en-US', {
+                  timeZone,
+                }),
+              );
+            }
+
+            const krkDate = changeTimeZone(new Date(), 'Europe/Warsaw');
+            console.log(krkDate); // 👉️ "Sun Jan 16 2022 08:54:44"
+
+            var seconds = krkDate.getSeconds();
+            var minutes = krkDate.getMinutes();
+            var hours = krkDate.getHours();
             hours = (hours > 12) ? hours - 12 : hours;
-      
             minutes = (minutes * 60) + seconds;
             hours = (hours * 3600) + minutes;
       
