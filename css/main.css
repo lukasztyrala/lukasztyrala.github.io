@@ -980,17 +980,19 @@ figure iframe {
 
 /* .group */
 
-.group-group {
+.flex {
   align-items: flex-start;
+  column-gap: 1.5rem;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   row-gap: 1.5rem;
-  justify-content: space-between;
 }
 
-.group-group .group {
-  min-width: 12rem;
-  width: 40%;
+.flex .item {
+  flex-grow: 1;
+  max-width: 50%;
+  min-width: 11rem;
 }
 
 .group {
