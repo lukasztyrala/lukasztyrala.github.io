@@ -978,45 +978,30 @@ figure iframe {
   margin: 0;
 }
 
-/* .group */
+/* .highlight */
 
-.flex {
-  align-items: flex-start;
-  column-gap: 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  row-gap: 1.5rem;
-}
-
-.flex .item {
-  flex-grow: 1;
-  max-width: 50%;
-  min-width: 11rem;
-}
-
-.group {
+.highlight {
   border: .025rem solid hsla(216, 25%, 29%, 0.25);
   border-radius: 0.5rem;
   clear: both;
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  padding: 1.5rem;
   margin: 0 auto 1.5rem auto;
 }
 
-.group *:first-child {
+.highlight *:first-child {
   margin-top: 0;
 }
 
-.group.standout {
+.highlight.standout {
   background-color: #fefefe;
 }
 
-.group.emphasis {
+.highlight.emphasis {
   background-color: #fcedcc;
 }
 
 
-/* /.group */
+/* /.highlight */
 
 /* ==========================================================================
    Helper classes
