@@ -1,71 +1,34 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Page from '../layouts/Page.astro';
 ---
-
-<!doctype html>
-<html lang="en" class="light-theme">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<link rel="stylesheet" href="https://use.typekit.net/bxg6oqg.css">
-	</head>
-
-<body class="page">
-
-	<!-- 
-		.----------------------.
-		|  Main page sections  |
-		+----------------------+
-		|  .page-title ……… %1  |
-		|  .page-links ……… %2  |
-		|  .page-name ………… %3  |
-		|  .page-intro ……… %4  |
-		|  .page-content … %5  |
-		|  .page-foot ………… %6  |
-		|  .page-footer …… %7  |
-		|  .page.meta ………… %8  |
-		'----------------------'
-	-->
+<Page page_title="manifesto.html">
 	
-	<Header />
-	
-	<!-- .page-name %3 -->
-		<h1 class="page-name">Manifesto</h1>
-	<!-- /.page-name -->
-	
-	<!-- .page-intro %4 -->
-		<div class="page-intro">
-			<p class="lead">
-				Every project, team, and organisation is different, but some things stay constant. Below is a list of things I find true or important: my tenets and guiding principles.
-			</p>
-		</div>
-	<!-- /.page-intro -->
-	
-	<!-- .page-content %5 -->
-		<div class="page-content">
-			<ol class="roman">
-				<li>Family and friends are most important. Life needs balance. We are social beings.</li>
-				<li>Learning is a lifetime activity. Curiosity gives momentum.</li>
-				<li>Good questions are more interesting than readily available answers.</li>
-				<li>Understanding is more important than tools.</li>
-				<li>Progress over a process. Process over assumptions and <i>how we did it before</i>.</li>
-				<li>Every job needs a pursuit of perfection—which is unreachable. Good enough is enough.</li>
-				<li>The big picture is a starting point for crafting details.</li>
-				<li>Trust, honesty, and transparency must be a part of every collaboration.</li>
-				<li>Every business is about profit, but money should never be the ultimate goal.</li>
-				<li>The best things are created by teams. Individuals make a difference.</li>
-				<li>Everyone is creative. Execution is priceless. Ideas are worthless, but the good ones are rare.</li>
-				<li>People can do great things, but they need the support of environments that provide them with psychological safety.</li>
-				<li>Every person must be treated with respect. Apart from hateful bigots.</li>
-				<li>Nothing is simple, but we can make things clear. That is design.</li>
-			</ol>	
-			
-			</div>
-	<!-- /.page-content -->
+	<h1 class="page-name">Manifesto</h1>
 
-	<Footer />
+	<div class="page-intro">
+		<p class="lead">
+			Every project, team, and organisation is different, but some things stay constant. Below is a list of things I find true or important: my tenets and guiding principles.
+		</p>
+	</div>
 
-</body>
-</html>
+	<div class="page-content">
+		<ol class="roman">
+			<li>Family and friends are most important. Life needs balance. We are social beings.</li>
+			<li>Learning is a lifetime activity. Curiosity gives momentum.</li>
+			<li>Good questions are more interesting than readily available answers.</li>
+			<li>Understanding is more important than tools.</li>
+			<li>Progress over a process. Process over assumptions and <i>how we did it before</i>.</li>
+			<li>Every job needs a pursuit of perfection—which is unreachable. Good enough is enough.</li>
+			<li>The big picture is a starting point for crafting details.</li>
+			<li>Trust, honesty, and transparency must be a part of every collaboration.</li>
+			<li>Every business is about profit, but money should never be the ultimate goal.</li>
+			<li>The best things are created by teams. Individuals make a difference.</li>
+			<li>Everyone is creative. Execution is priceless. Ideas are worthless, but the good ones are rare.</li>
+			<li>People can do great things, but they need the support of environments that provide them with psychological safety.</li>
+			<li>Every person must be treated with respect. Apart from hateful bigots.</li>
+			<li>Nothing is simple, but we can make things clear. That is design.</li>
+		</ol>	
+		
+	</div>
+
+<Page/>
