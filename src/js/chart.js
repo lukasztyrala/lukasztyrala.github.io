@@ -1,5 +1,4 @@
 	// Prepare the data
-  const currentYear = new Date().getFullYear();
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const distances2021 = [ 48,  43, 222, 178, 484, 444, 112, 450,  91, 141,  14, 131];
   const distances2022 = [ 71, 141, 279, 318,  85, 365, 472, 497, 302, 276, 224, 157];
@@ -15,6 +14,8 @@
     distances2024,
   ];
   
+console.log(data)
+
   // Set the options
   const options = {
     height: 200,
