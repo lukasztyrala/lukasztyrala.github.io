@@ -1,71 +1,13 @@
 ---
 import Page from '../layouts/Page.astro';
+import Clock from '../components/Clock.astro';
 ---
 <Page page_title="now.html">
 
 	<h1 class="page-name">Now</h1>
 
   <div class="page-intro">
-    <div class="minimal-clock">
-      <svg version="1.1" class="clock" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="96px" height="96px" viewBox="0 0 384 384" enable-background="new 0 0 384 384" xml:space="preserve">
-        <line class="clock-hour-hand" id="" fill="none" stroke="#223e5d" stroke-width="8" stroke-miterlimit="8" x1="192" y1="192" x2="192" y2="87.5"/>
-        <line class="clock-minute-hand" id="anim-clock-minute-hand" fill="none" stroke="#223e5d" stroke-width="8" stroke-miterlimit="8" x1="192" y1="192" x2="192" y2="54"/>
-        <circle class="clock-axis" cx="192" cy="192" r="12" fill="#fbf9e7"/>
-        <g class="clock-second-hand" id="anim-clock-second-hand">
-            <line class="clock-second-hand-arm" fill="none" stroke="red" stroke-width="1" stroke-miterlimit="8" x1="192" y1="192" x2="192" y2="28.5"/>
-            <circle class="clock-second-hand-axis" fill="#223e5d" cx="192" cy="192" r="4"/>
-        </g>
-        <defs>
-          <animateTransform
-                type="rotate"
-                fill="remove"
-                restart="always"
-                calcMode="linear"
-                accumulate="none"
-                additive="sum"
-                xlink:href="#anim-clock-hour-hand"
-                repeatCount="indefinite"
-                dur="43200s"
-                to="360 192 192"
-                from="0 192 192"
-                attributeName="transform"
-                attributeType="xml">
-          </animateTransform>
-      
-          <animateTransform
-                type="rotate"
-                fill="remove"
-                restart="always"
-                calcMode="linear"
-                accumulate="none"
-                additive="sum"
-                xlink:href="#anim-clock-minute-hand"
-                repeatCount="indefinite"
-                dur="3600s"
-                to="360 192 192"
-                from="0 192 192"
-                attributeName="transform"
-                attributeType="xml">
-          </animateTransform>
-      
-          <animateTransform
-                type="rotate"
-                fill="remove"
-                restart="always"
-                calcMode="linear"
-                accumulate="none"
-                additive="sum"
-                xlink:href="#anim-clock-second-hand"
-                repeatCount="indefinite"
-                dur="60s"
-                to="360 192 192"
-                from="0 192 192"
-                attributeName="transform"
-                attributeType="xml">
-          </animateTransform>
-        </defs>
-      </svg>
-    </div>
+    <Clock />
     <p class="lead">
       Here is what you can find on my desk now, the things that are happening, current interests. Updated infrequently.
     </p>
@@ -109,6 +51,5 @@ import Page from '../layouts/Page.astro';
 
 </Page>
 
-<script src="/src/js/clock.js"></script>
 <script src="/src/js/uPlot.iife.min.js"></script>
 <script src="/src/js/chart.js"></script>
