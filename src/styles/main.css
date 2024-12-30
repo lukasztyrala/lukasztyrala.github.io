@@ -743,7 +743,6 @@ canvas, source, audio, video, embed, iframe, area, object {
           background: #223e5d;
           box-shadow: 0 .25rem .5rem hsla(216, 25%, 29%, 0.25);
           color: #fbf9e7;
-          transform: translateY(-0.15rem);
         }
 }
 
@@ -754,7 +753,6 @@ canvas, source, audio, video, embed, iframe, area, object {
           background: #223e5d;
           box-shadow: 0 .25rem .5rem hsla(216, 25%, 29%, 0.25);
           fill: #fbf9e7;
-          transform: translateY(-0.15rem);
         }
 }
 
@@ -797,10 +795,12 @@ nav a.current {
   cursor: default;
 }
 
-@media only screen and (min-width:  800px), (min-width: 1280px), (min-width: 1440px)  {
+@media only screen and (min-width: 800px), (min-width: 1280px), (min-width: 1440px)  {
   nav a.current::before {
-    content: "← ";
+    content: "✏︎ ";
+    display: inline-block;
     font-style: normal;
+    line-height: 100%;
     opacity: .5;
   }
 }
@@ -819,7 +819,7 @@ nav a.current.icon svg {
   justify-content: center;
 }
 
-@media only screen and (max-width:  480px)  { 
+@media only screen and (max-width: 480px)  { 
   .page-foot {
     justify-content: flex-start;
   }
@@ -833,7 +833,7 @@ nav a.current.icon svg {
 
 @keyframes icon-up {
   0%    { transform: translateY(0); }
-  25%   { transform: translateY(-0.125rem);  }
+  25%   { transform: translateY(-0.125rem); }
   75%   { transform: translateY(0.125rem); }
   100%  { transform: translateY(0); }
 }
