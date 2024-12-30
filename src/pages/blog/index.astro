@@ -10,22 +10,21 @@ const posts = (await getCollection('blog')).sort(
 
 <Page page_title="blog.html">
 
-	<h1 class="page-name">Blog</h1>
+  <h1 class="page-name">Blog</h1>
 
-	<div class="page-intro">
-		<p class="lead">
-			Old fashioned blog.
-		</p>
-	</div>
+  <div class="page-intro">
+    <p class="lead">
+      Old fashioned blog. All opinions are mine, and some are thought experiments.
+    </p>
+  </div>
 
-	<div class="page-content">
-    <ul>
+  <div class="page-content">
+    <ul class="blog-posts">
       {
         posts.map((post) => (
           <li>
-            <a href={`/blog/${post.slug}/`}>
-              <span class="post-title">{post.data.title}</span> <FormattedDate date={post.data.pubDate} />
-            </a>
+            <small><FormattedDate date={post.data.pubDate} /></small> &middot;
+            <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
           </li>
         ))
       }

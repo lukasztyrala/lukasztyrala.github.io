@@ -111,9 +111,9 @@ textarea {
 
 
 html {
-  font-family: "chaparral-pro", Georgia, serif;
+  font-family: Clavo, "chaparral-pro", Georgia, serif;
   font-size: 100%; /* Assumed 16px */
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5rem;
   padding: 1.5rem;
 }
@@ -137,6 +137,10 @@ code, kbd, samp, var, pre {
   font-style: normal;
   font-weight: 400;
   padding: 0.05rem 0.2rem;
+}
+
+.astro-code code { /* Unset background for the MDX Astro code block */
+  background-color: unset;
 }
 
 pre.ascii-art {
