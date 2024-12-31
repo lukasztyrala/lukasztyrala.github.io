@@ -19,17 +19,18 @@ const { Content } = await post.render();
 
 <Post {...post.data}>
 
-  <h1 class="page-name"><a href="/blog">Blog</a> / {post.data.title}</h1>
+  <h1 class="page-name">{post.data.title}</h1>
 
   <div class="page-intro">
     <p class="lead">
-      <FormattedDate date={post.data.pubDate} /> / 
-      {post.data.description}
+       {post.data.description}
     </p>
   </div>
 
   <div class="page-content">
     <Content />
+    <hr>
+    <p class="text-center"><small class="text-demphasise"><i>Post published on<FormattedDate date={post.data.pubDate} /></i>.</small></p>
   </div>
 
 </Post>
