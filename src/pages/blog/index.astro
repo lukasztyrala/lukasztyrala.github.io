@@ -1,0 +1,36 @@
+---
+import Page from '../../layouts/Page.astro';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<Page page_title="blog.html">
+
+  <h1 class="page-name">Blog</h1>
+
+  <div class="page-intro">
+    <p class="lead">
+      Old fashioned blog. All opinions are mine, and some are thought experiments.
+    </p>
+  </div>
+
+  <div class="page-content">
+    <ul class="stand-alone-items">
+      {
+        posts.map((post) => (
+          <li>
+            <h3><a href={`/blog/${post.slug}/`}>{post.data.title}</a></h3>
+            <p class="text-demphasise"><small><FormattedDate date={post.data.pubDate} /></small> &middot; {post.data.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+</Page>
+
+
