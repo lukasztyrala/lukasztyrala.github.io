@@ -1,6 +1,7 @@
 
 
-```            a CODE & DESIGN by
+```
+            a CODE & DESIGN by
               @lukasztyrala
 
                  _....._

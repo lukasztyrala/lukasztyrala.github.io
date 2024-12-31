@@ -19,12 +19,12 @@ const posts = (await getCollection('blog')).sort(
   </div>
 
   <div class="page-content">
-    <ul class="blog-posts">
+    <ul class="stand-alone-items">
       {
         posts.map((post) => (
           <li>
-            <small><FormattedDate date={post.data.pubDate} /></small> &middot;
-            <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+            <h3><a href={`/blog/${post.slug}/`}>{post.data.title}</a></h3>
+            <p class="text-demphasise"><small><FormattedDate date={post.data.pubDate} /></small> &middot; {post.data.description}</p>
           </li>
         ))
       }

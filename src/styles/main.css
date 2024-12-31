@@ -333,11 +333,16 @@ ul {
 }
 
 .roman {
- list-style-type: lower-roman;
+  list-style-type: lower-roman;
 }
 
 .stand-alone-items li {
+  list-style-type: none;
   margin-bottom: 1.5rem;
+}
+
+.stand-alone-items li > * {
+  margin-bottom: .25rem;
 }
 
 .compact-list {
