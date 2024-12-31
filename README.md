@@ -1,9 +1,8 @@
+# Design office of Łukasz Tyrała
 
+Still better at ✏️ software than 🤖.
 
-```
-            a CODE & DESIGN by
-              @lukasztyrala
-
+```plain
                  _....._
                ,'.-._.-.`.
                |(       )|
