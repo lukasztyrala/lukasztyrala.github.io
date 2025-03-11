@@ -179,11 +179,22 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
 
 - Fruit
   - Apple
+    - This
+    - That
   - Orange
   - Banana
 - Dairy
   - Milk
   - Cheese
+
+1. Hello
+  - world
+  - home
+  - here
+    - there
+2. Bye, bye
+  - For now
+3. Fin.
 
 ## Other Elements — abbr, sub, sup, kbd, mark
 
