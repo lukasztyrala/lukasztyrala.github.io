@@ -1,5 +1,8 @@
 ---
 import Page from '../layouts/Page.astro';
+const today = new Date(); 
+const exp = today.getFullYear() - 2008; // 2008 is the year I started my professional career
+const expEducation = today.getFullYear() - 2013; // 2013 is the year I started my education in design
 ---
 <Page page_title="index.html">
 
@@ -11,33 +14,56 @@ import Page from '../layouts/Page.astro';
 
 		<section class="hello">
 			<p>
-				I <mark>strategise / design / craft</mark>:
-				(i)&nbsp;<b>information</b>, (ii)&nbsp;<b>interactions</b>, and (iii)&nbsp;<b>interfaces</b> 
-				for <b>products</b> and <b>services</b>
-				in the context of <b>technology</b>, <b>business</b>, and <b>people</b> 
-				by employing <b>system/abstract thinking</b>, <b>sustainability</b>, and <b>empathy</b>, 
-				to deliver <i>great UX</i> and <i>positive outcomes</i> for people. This is my website.
+        I'm <mark>Łukasz Tyrała</mark>, an <b>information</b> architect, an <b>interaction</b> and user <b>interface</b> designer and educator.
+        I focus on software products development and user experience.
+        My <b>{exp} years of experience</b> makes me a true generalist with a broad understanding of technology, business, and people.
+      </p>
+			<p>
+				I'm driven by curiosity and constant learning. I work with integrity, attention to detail, and humility toward the complexity of our world and humans.
 			</p>
 			<p>
-				I am driven by curiosity and constant learning. I work with integrity, attention to detail, and humility toward the complexity of our world and humans.
+        I strongly believe in the power of research, creativity, and collaboration as means to good judgment, swift execution, and quality outcomes.
 			</p>
 			<p>
-				I strongly believe in the power of research, conceptualisation, creativity, and collaboration, all modelled around a process of forming ideas, making decisions and fast execution to learn based on experimentation.
-			</p>
-			<p>
-				I am based in <a href="https://en.wikipedia.org/wiki/Kraków">Kraków</a> but I work across time and space.
+				I'm based in <a href="https://en.wikipedia.org/wiki/Kraków">Kraków</a> but I work across time and space.
 			</p>
 		</section>
 		<hr>
 		<section class="curriculum">
 			<p>
-				<b>Work experience</b>. <i>Currently</i>: Principal Designer at <a href="https://grafana.com/" title="Company website">Grafana Labs</a> ❦ <i>Previously</i>: Head of User Experience &amp; Product Design at <a href="https://www.linkedin.com/company/tvn/about/" title="LinkedIn company page">TVN Discovery</a> ✻ Senior Service Designer at <a href="https://www.linkedin.com/company/aktan/" title="LinkedIn company page">aktan.fr</a> ✻ Lead UX Designer and Digital Product Manager at <a href="https://miastologia.pl" title="Customer website (in Polish)">miastologia.pl</a> ✻ User Experience Design Director at <a href="https://www.vmlyr.com" title="Global company website">VML Poland</a> ✻ Front-end Developer at <a href="https://www.creativestyle.de" title="Company website (in German)">Creative Style</a> ☙ 15 years of professional design and IT experience.
+				<b>{exp} years of professional experience</b>. 
+        <i>Currently</i>: Principal Designer at <a href="https://grafana.com/" title="Company website">Grafana Labs</a> ❦ 
+        <i>Previously</i>: Head of User Experience &amp; Product Design at <a href="https://www.linkedin.com/company/tvn/about/" title="LinkedIn company page">TVN Warner Bros Discovery</a> 
+        ✻ Senior Service Designer at <a href="https://www.linkedin.com/company/aktan/" title="LinkedIn company page">aktan.fr</a> 
+        ✻ Lead UX Designer and Digital Products Manager at <a href="https://miastologia.pl" title="Customer website (in Polish)">miastologia.pl</a> 
+        ✻ UX Design Director at <a href="https://www.vmlyr.com" title="Global company website">VML Poland</a> 
+        ✻ Front-end Developer at <a href="https://www.creativestyle.de" title="Company website (in German)">Creative Style</a>.
 			</p>
 			<p>
-				<b>Teaching</b>. Educator and mentor at <a href="https://english.swps.pl" title="University website">SWPS University of Social Sciences and Humanities</a> (Warsaw &amp; Katowice) ❦ Educator at Faculty of Humanities (<a href="https://www.agh.edu.pl/en/" title="University website">AGH University of Science and Technology</a>, Kraków).
+				<b>{expEducation} years of teaching experience</b>. 
+        Expert, mentor, and guest lecturer at <a href="https://english.swps.pl" title="University website">SWPS University of Social Sciences and Humanities</a> (Warsaw &amp; Katowice) 
+        ❦ Educator at Faculty of Humanities (<a href="https://www.agh.edu.pl/en/" title="University website">AGH University of Science and Technology</a>, Kraków).
 			</p>
 			<p>
-				<b>Public speaking &amp; workshops</b>: Google Launchpad, UX Poland, 4Developers, Creative Mornings, WUD Kraków (&times;5), Element Urban Talks, Customer &amp; User Experience Seminary, Internet Beta (2012) + 16 other gigs.
+				<b>20+ talks, webinars &amp; workshops</b>: 
+          <a href="https://www.youtube.com/watch?v=tNzvNDf0Mh0" title="Never urgent, rarely important: how to find and elevate the value of visual (UI) design for different types of project.">WaysConf</a>, 
+          Google Launchpad, 
+          <a href="https://www.youtube.com/watch?v=TzWbpcxFv9w" title="Paper endures all">UX Poland</a>, 
+          <a href="https://www.youtube.com/watch?v=J9b2Cxy8Oq8" title="Visual thinking">Strefa Designu (SWPS University)</a>,
+          4Developers, 
+          Creative Mornings, 
+          <a href="https://worldusabilityday.org/events/wud-krakow/">World Usability Dday Kraków</a> (&times;5), 
+          <a href="https://mck.krakow.pl/events/element-urban-talks-in-krakow">Element Urban Talks</a>, 
+          Panelownia,
+          TiPi UX,
+          Customer &amp; User Experience Seminary, 
+          ACE! Conference,
+          Internet Beta,
+          soap!,
+          <a href="https://www.youtube.com/watch?v=9qgct5N9eAM" title="Szacowanie pracy projektowej (Estimating design work)">Wiedza Babel</a>,
+          <a href="https://www.youtube.com/watch?v=kemdxF-jnq4" title="O dążeniu do niewidzialności (Toward invisibility)">KrakSpot</a>,
+          <a href="https://www.youtube.com/watch?v=mN8yKWckQ8Y" title="Kreatywność w świecie zarządzanym przez arkusze kalkulacyjne (Creativity in an age of a spreadsheet)">Separator</a> 
+          &amp;&nbsp;<i> more</i>.
 			</p>
 			<p>
 				<small>

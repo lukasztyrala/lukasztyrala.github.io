@@ -30,7 +30,7 @@ const { Content } = await post.render();
   <div class="page-content">
     <Content />
     <hr>
-    <p class="text-center"><small class="text-demphasise"><i>Post published on<FormattedDate date={post.data.pubDate} /></i>.</small></p>
+    <p><small class="text-demphasise"><i>Written by {post.data.author} and published on <FormattedDate date={post.data.pubDate} /></i>. Share this with someone or <a href="/blog">read more</a>.</small></p>
   </div>
 
 </Post>

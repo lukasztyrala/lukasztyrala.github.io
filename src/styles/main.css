@@ -652,6 +652,10 @@ canvas, source, audio, video, embed, iframe, area, object {
   flex-direction: column;
 }
 
+.page-content {
+  margin-bottom: 3rem;
+}
+
 @media only screen and (max-width:  480px)  { 
   .page-title {
     flex-direction: row;

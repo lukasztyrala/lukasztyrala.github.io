@@ -1,6 +1,7 @@
 ---
 title: 'Markdown Style Guide'
 description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
+author: 'Łukasz Tyrała'
 pubDate: '2008-01-01'
 heroImage: '/blog-placeholder-1.jpg'
 ---
@@ -192,8 +193,10 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
   - home
   - here
     - there
+
 2. Bye, bye
   - For now
+
 3. Fin.
 
 ## Other Elements — abbr, sub, sup, kbd, mark
