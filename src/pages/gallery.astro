@@ -1,0 +1,78 @@
+---
+import Page from '../layouts/Gallery.astro';
+const today = new Date(); 
+const exp = today.getFullYear() - 2008; // 2008 is the year I started my professional career
+const expEducation = today.getFullYear() - 2013; // 2013 is the year I started my education in design
+---
+<Page page_title="gallery.html">
+
+	<h1 class="page-name">Hello world,</h1>
+
+	<div class="page-intro"></div>
+
+	<div class="page-content">
+
+		<section class="hello">
+			<p>
+        I'm <mark>Łukasz Tyrała</mark>, an <b>information</b> architect, an <b>interaction</b> and user <b>interface</b> designer and educator.
+        I focus on software products development and user experience.
+        My <b>{exp} years of experience</b> makes me a true generalist with a broad understanding of technology, business, and people.
+      </p>
+			<p>
+				I'm driven by curiosity and constant learning. I work with integrity, attention to detail, and humility toward the complexity of our world and humans.
+			</p>
+			<p>
+        I strongly believe in the power of research, creativity, and collaboration as means to good judgment, swift execution, and quality outcomes.
+			</p>
+			<p>
+				I'm based in <a href="https://en.wikipedia.org/wiki/Kraków">Kraków</a> but I work across time and space.
+			</p>
+		</section>
+		<hr>
+		<section class="curriculum">
+			<p>
+				<b>{exp} years of professional experience</b>. 
+        <i>Currently</i>: Principal Designer at <a href="https://grafana.com/" title="Company website">Grafana Labs</a> ❦ 
+        <i>Previously</i>: Head of User Experience &amp; Product Design at <a href="https://www.linkedin.com/company/tvn/about/" title="LinkedIn company page">TVN Warner Bros Discovery</a> 
+        ✻ Senior Service Designer at <a href="https://www.linkedin.com/company/aktan/" title="LinkedIn company page">aktan.fr</a> 
+        ✻ Lead UX Designer and Digital Products Manager at <a href="https://miastologia.pl" title="Customer website (in Polish)">miastologia.pl</a> 
+        ✻ UX Design Director at <a href="https://www.vmlyr.com" title="Global company website">VML Poland</a> 
+        ✻ Front-end Developer at <a href="https://www.creativestyle.de" title="Company website (in German)">Creative Style</a>.
+			</p>
+			<p>
+				<b>{expEducation} years of teaching experience</b>. 
+        Expert, mentor, and guest lecturer at <a href="https://english.swps.pl" title="University website">SWPS University of Social Sciences and Humanities</a> (Warsaw &amp; Katowice) 
+        ❦ Educator at Faculty of Humanities (<a href="https://www.agh.edu.pl/en/" title="University website">AGH University of Science and Technology</a>, Kraków).
+			</p>
+			<p>
+				<b>20+ talks, webinars &amp; workshops</b>: 
+          <a href="https://www.youtube.com/watch?v=tNzvNDf0Mh0" title="Never urgent, rarely important: how to find and elevate the value of visual (UI) design for different types of project.">WaysConf</a>, 
+          Google Launchpad, 
+          <a href="https://www.youtube.com/watch?v=TzWbpcxFv9w" title="Paper endures all">UX Poland</a>, 
+          <a href="https://www.youtube.com/watch?v=J9b2Cxy8Oq8" title="Visual thinking">Strefa Designu (SWPS University)</a>,
+          4Developers, 
+          Creative Mornings, 
+          <a href="https://worldusabilityday.org/events/wud-krakow/">World Usability Dday Kraków</a> (&times;5), 
+          <a href="https://mck.krakow.pl/events/element-urban-talks-in-krakow">Element Urban Talks</a>, 
+          Panelownia,
+          TiPi UX,
+          Customer &amp; User Experience Seminary, 
+          ACE! Conference,
+          Internet Beta,
+          soap!,
+          <a href="https://www.youtube.com/watch?v=9qgct5N9eAM" title="Szacowanie pracy projektowej (Estimating design work)">Wiedza Babel</a>,
+          <a href="https://www.youtube.com/watch?v=kemdxF-jnq4" title="O dążeniu do niewidzialności (Toward invisibility)">KrakSpot</a>,
+          <a href="https://www.youtube.com/watch?v=mN8yKWckQ8Y" title="Kreatywność w świecie zarządzanym przez arkusze kalkulacyjne (Creativity in an age of a spreadsheet)">Separator</a> 
+          &amp;&nbsp;<i> more</i>.
+			</p>
+			<p>
+				<small>
+					<b>Work areas and professional interests</b>: software product design, product management, digital transformation, ux research, content strategy, information architecture (ia), interaction design (ixd), user interface (ui), user experience (ux), service design, creativity and learning.
+				</small>
+			</p>
+			<p>My inbox is open for education, mentorship, and speaking gigs: <mark>lukasz</mark> at <mark>tyra&middot;la</mark></p>
+		</section>
+		
+	</div>
+
+</Page>
