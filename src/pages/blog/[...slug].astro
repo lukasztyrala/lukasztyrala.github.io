@@ -49,7 +49,6 @@ const { Content } = await post.render();
 
   if (shareLink) {
     const originalLabel = shareLink.textContent;
-    let resetTimeout: number | undefined;
 
     const handleShare = async () => {
       const url = window.location.href;
@@ -71,9 +70,8 @@ const { Content } = await post.render();
 
       if (clipboardWriteSucceeded) {
         shareLink.textContent = '[Thanks for sharing]';
-        resetTimeout = setTimeout(() => {
+        window.setTimeout(() => {
           shareLink.textContent = originalLabel;
-          resetTimeout = undefined;
         }, 2000);
       }
     };
@@ -81,6 +79,9 @@ const { Content } = await post.render();
     shareLink.addEventListener('click', handleShare);
     
     shareLink.addEventListener('keydown', (event) => {
+      if (!(event instanceof KeyboardEvent)) {
+        return;
+      }
       // Handle Enter and Space keys for accessibility
       if (event.key === 'Enter') {
         handleShare();
