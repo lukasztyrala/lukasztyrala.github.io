@@ -46,23 +46,23 @@ const { Content } = await post.render();
       event.preventDefault();
 
       const url = window.location.href;
-      let copied = false;
+      let clipboardWriteSucceeded = false;
 
       if (navigator.clipboard?.writeText) {
         try {
           await navigator.clipboard.writeText(url);
-          copied = true;
+          clipboardWriteSucceeded = true;
         } catch {
-          copied = false;
+          clipboardWriteSucceeded = false;
         }
       }
 
-      if (!copied) {
+      if (!clipboardWriteSucceeded) {
         // Fallback: show a prompt so the user can manually copy.
         window.prompt('Copy this link:', url);
       }
 
-      if (copied) {
+      if (clipboardWriteSucceeded) {
         shareLink.textContent = '[Thanks for sharing]';
         window.setTimeout(() => {
           shareLink.textContent = originalLabel;
