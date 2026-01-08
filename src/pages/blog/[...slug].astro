@@ -41,7 +41,7 @@ const { Content } = await post.render();
 
   if (shareLink) {
     const originalLabel = shareLink.textContent;
-    let resetTimeout: ReturnType<typeof setTimeout> | null = null;
+    let resetTimeout: number | undefined;
 
     shareLink.addEventListener('click', async (event) => {
       event.preventDefault();
@@ -65,14 +65,14 @@ const { Content } = await post.render();
 
       if (copied) {
         // Clear any existing timeout to prevent race condition
-        if (resetTimeout !== null) {
+        if (resetTimeout !== undefined) {
           clearTimeout(resetTimeout);
         }
 
         shareLink.textContent = '[Thanks for sharing]';
         resetTimeout = setTimeout(() => {
           shareLink.textContent = originalLabel;
-          resetTimeout = null;
+          resetTimeout = undefined;
         }, 2000);
       }
     });
