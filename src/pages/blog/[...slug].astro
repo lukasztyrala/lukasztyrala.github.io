@@ -31,7 +31,63 @@ const { Content } = await post.render();
     <Content />
     <hr>
     <p><small class="text-demphasise"><i>Written by {post.data.author} and published on <FormattedDate date={post.data.pubDate} /></i>. 
-      Share this post with someone or <a href="/blog">read more</a>.</small></p>
+      <span role="button" tabindex="0" title="Copy to clipboard" data-share-link class="share-button">Share this post</span> with someone or <a href="/blog">read more</a>.</small></p>
   </div>
 
 </Post>
+
+<style>
+  .share-button {
+    cursor: pointer;
+    text-decoration: underline;
+    color: inherit;
+  }
+</style>
+
+<script>
+  const shareLink = document.querySelector('[data-share-link]');
+
+  if (shareLink) {
+    const originalLabel = shareLink.textContent;
+    let resetTimeout: number | undefined;
+
+    const handleShare = async () => {
+      const url = window.location.href;
+      let clipboardWriteSucceeded = false;
+
+      if (navigator.clipboard?.writeText) {
+        try {
+          await navigator.clipboard.writeText(url);
+          clipboardWriteSucceeded = true;
+        } catch {
+          clipboardWriteSucceeded = false;
+        }
+      }
+
+      if (!clipboardWriteSucceeded) {
+        // Fallback: show a prompt so the user can manually copy.
+        window.prompt('Copy this link:', url);
+      }
+
+      if (clipboardWriteSucceeded) {
+        shareLink.textContent = '[Thanks for sharing]';
+        resetTimeout = setTimeout(() => {
+          shareLink.textContent = originalLabel;
+          resetTimeout = undefined;
+        }, 2000);
+      }
+    };
+
+    shareLink.addEventListener('click', handleShare);
+    
+    shareLink.addEventListener('keydown', (event) => {
+      // Handle Enter and Space keys for accessibility
+      if (event.key === 'Enter') {
+        handleShare();
+      } else if (event.key === ' ') {
+        event.preventDefault();
+        handleShare();
+      }
+    });
+  }
+</script>
