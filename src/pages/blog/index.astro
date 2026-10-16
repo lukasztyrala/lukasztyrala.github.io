@@ -8,7 +8,10 @@ const posts = (await getCollection('blog')).sort(
 );
 ---
 
-<Page page_title="blog.html">
+<Page
+  title="Blog"
+  description="Old fashioned blog. All opinions are mine, and some are thought experiments."
+>
 
   <h1 class="page-name">Blog</h1>
 
@@ -30,11 +33,9 @@ const posts = (await getCollection('blog')).sort(
       }
     </ul>
     <hr>
-    <p>
-      <blockquote>
-        You don’t need an idea to start a story. <br>You just need a sentence. <br><span class="text-demphasise">— George Saunders</span>
-      </blockquote>
-    </p>
+    <blockquote>
+      You don’t need an idea to start a story. <br>You just need a sentence. <br><span class="text-demphasise">— George Saunders</span>
+    </blockquote>
   </div>
 
 </Page>

@@ -10,7 +10,7 @@ npm run build    # Build production site to ./dist/
 npm run preview  # Preview production build locally
 ```
 
-No test or lint commands are configured.
+No test or lint commands are configured. The scripts also run with `bun run …` (the local lockfile is `bun.lockb`). Astro 7 requires Node.js ≥ 22.12.
 
 ## Tech preferences
 
@@ -22,7 +22,7 @@ The site is published via **GitHub Pages** with the custom domain `lukasztyrala.
 
 ## Architecture
 
-This is a personal portfolio/blog site built with **Astro 6** using plain CSS (no Tailwind). It generates a static site deployed to `https://lukasztyrala.pl`.
+This is a personal portfolio/blog site built with **Astro 7** using plain CSS (no Tailwind). It generates a static site deployed to `https://lukasztyrala.pl`.
 
 **Key integrations**: `@astrojs/mdx` for blog content, `@astrojs/rss` for the feed, `@astrojs/sitemap` for SEO.
 
@@ -30,13 +30,14 @@ This is a personal portfolio/blog site built with **Astro 6** using plain CSS (n
 
 Blog posts live in `src/content/blog/` as `.md` or `.mdx` files. The collection schema (defined in `src/content.config.ts`) requires `title`, `description`, and `pubDate`; `author`, `updatedDate`, and `heroImage` are optional.
 
-Files prefixed with `_` are excluded from the collection by the glob loader pattern `**/[^_]*.{md,mdx}`.
+Files prefixed with `_` are excluded from the collection by the glob loader pattern `**/[^_]*.{md,mdx}` (e.g. the `_…markdown-style-guide.md` reference post). `author` defaults to `SITE_AUTHOR`.
 
 ### Layouts and Pages
 
-- `src/layouts/` — three layouts: `Page` (generic), `Post` (blog posts), `Gallery`
-- `src/pages/` — static pages (`index`, `manifesto`, `now`, `portfolio`, `gallery`, `test`) plus dynamic blog routes (`blog/[...id].astro`) and `rss.xml.js`
-- `src/components/` — shared components: `BaseHead`, `Header`, `Footer`, `HeaderLink`, `FormattedDate`, `Clock`
-- `src/styles/` — `main.css`, `gallery.css`, `normalize.css`
-- `src/js/clock.js` — client-side clock utility
-- `src/consts.ts` — site-wide `SITE_TITLE` and `SITE_DESCRIPTION` constants
+- `src/layouts/Page.astro` — the single layout. Props: `title`, `description`, `image`, `type` (`website`/`article`), `noindex` (all passed to `BaseHead` for `<title>`, meta and Open Graph tags) and `bodyClass` (default `page`; blog posts use `page post`). It wraps the slot in `<main class="page-main">`, which is `display: contents` so `.page-name`, `.page-intro` and `.page-content` stay direct items of the body grid.
+- `src/pages/` — static pages (`index`, `manifesto`, `now`, `portfolio`, `gallery`, `test`) plus dynamic blog routes (`blog/[...id].astro`) and `rss.xml.js`. `test` and `gallery` are unlisted: they set `noindex` and are filtered out of the sitemap in `astro.config.mjs`.
+- `src/components/` — shared components: `BaseHead`, `Header`, `Footer`, `HeaderLink`, `SocialLinks` (profile icons used in both header and footer), `FormattedDate`, `Clock` (SVG clock with its own script)
+- `src/styles/` — `normalize.css` (in `@layer reset`) and `main.css` (layers `base`, `layout`, `components`, `utilities`; palette as custom properties on `:root`)
+- `src/consts.ts` — site-wide constants: `SITE_TITLE`, `SITE_DESCRIPTION`, `SITE_AUTHOR`, and build-time `YEARS_EXPERIENCE` / `YEARS_TEACHING`
+
+`astro.config.mjs` sets `compressHTML: true`. Astro 7's default (`'jsx'`) drops the whitespace at line breaks next to inline elements, which breaks the hand-written HTML in the pages.

@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /test.html
 
 Sitemap: https://lukasztyrala.pl/sitemap-index.xml

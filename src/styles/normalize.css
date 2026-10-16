@@ -8,6 +8,8 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
+@layer reset {
+
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -346,4 +348,6 @@ template {
 
 [hidden] {
   display: none;
+}
+
 }

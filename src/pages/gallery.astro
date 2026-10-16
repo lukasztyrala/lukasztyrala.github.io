@@ -1,10 +1,8 @@
 ---
-import Page from '../layouts/Gallery.astro';
-const today = new Date(); 
-const exp = today.getFullYear() - 2008; // 2008 is the year I started my professional career
-const expEducation = today.getFullYear() - 2013; // 2013 is the year I started my education in design
+import Page from '../layouts/Page.astro';
+import { YEARS_EXPERIENCE, YEARS_TEACHING } from '../consts';
 ---
-<Page page_title="gallery.html">
+<Page title="Gallery" bodyClass="gallery" noindex>
 
 	<h1 class="page-name">Hello world,</h1>
 
@@ -16,7 +14,7 @@ const expEducation = today.getFullYear() - 2013; // 2013 is the year I started m
 			<p>
         I'm <mark>Łukasz Tyrała</mark>, an <b>information</b> architect, an <b>interaction</b> and user <b>interface</b> designer and educator.
         I focus on software products development and user experience.
-        My <b>{exp} years of experience</b> makes me a true generalist with a broad understanding of technology, business, and people.
+        My <b>{YEARS_EXPERIENCE} years of experience</b> makes me a true generalist with a broad understanding of technology, business, and people.
       </p>
 			<p>
 				I'm driven by curiosity and constant learning. I work with integrity, attention to detail, and humility toward the complexity of our world and humans.
@@ -31,7 +29,7 @@ const expEducation = today.getFullYear() - 2013; // 2013 is the year I started m
 		<hr>
 		<section class="curriculum">
 			<p>
-				<b>{exp} years of professional experience</b>. 
+				<b>{YEARS_EXPERIENCE} years of professional experience</b>. 
         <i>Currently</i>: Principal Designer at <a href="https://grafana.com/" title="Company website">Grafana Labs</a> ❦ 
         <i>Previously</i>: Head of User Experience &amp; Product Design at <a href="https://www.linkedin.com/company/tvn/about/" title="LinkedIn company page">TVN Warner Bros Discovery</a> 
         ✻ Senior Service Designer at <a href="https://www.linkedin.com/company/aktan/" title="LinkedIn company page">aktan.fr</a> 
@@ -40,7 +38,7 @@ const expEducation = today.getFullYear() - 2013; // 2013 is the year I started m
         ✻ Front-end Developer at <a href="https://www.creativestyle.de" title="Company website (in German)">Creative Style</a>.
 			</p>
 			<p>
-				<b>{expEducation} years of teaching experience</b>. 
+				<b>{YEARS_TEACHING} years of teaching experience</b>. 
         Expert, mentor, and guest lecturer at <a href="https://english.swps.pl" title="University website">SWPS University of Social Sciences and Humanities</a> (Warsaw &amp; Katowice) 
         ❦ Educator at Faculty of Humanities (<a href="https://www.agh.edu.pl/en/" title="University website">AGH University of Science and Technology</a>, Kraków).
 			</p>
@@ -52,7 +50,7 @@ const expEducation = today.getFullYear() - 2013; // 2013 is the year I started m
           <a href="https://www.youtube.com/watch?v=J9b2Cxy8Oq8" title="Visual thinking">Strefa Designu (SWPS University)</a>,
           4Developers, 
           Creative Mornings, 
-          <a href="https://worldusabilityday.org/events/wud-krakow/">World Usability Dday Kraków</a> (&times;5), 
+          <a href="https://worldusabilityday.org/events/wud-krakow/">World Usability Day Kraków</a> (&times;5), 
           <a href="https://mck.krakow.pl/events/element-urban-talks-in-krakow">Element Urban Talks</a>, 
           Panelownia,
           TiPi UX,

@@ -1,7 +1,7 @@
 
 <div class="minimal-clock">
   <svg version="1.1" class="clock" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="96px" height="96px" viewBox="0 0 384 384" enable-background="new 0 0 384 384" xml:space="preserve">
-    <line class="clock-hour-hand" id="" fill="none" stroke="#223e5d" stroke-width="8" stroke-miterlimit="8" x1="192" y1="192" x2="192" y2="87.5"/>
+    <line class="clock-hour-hand" id="anim-clock-hour-hand" fill="none" stroke="#223e5d" stroke-width="8" stroke-miterlimit="8" x1="192" y1="192" x2="192" y2="87.5"/>
     <line class="clock-minute-hand" id="anim-clock-minute-hand" fill="none" stroke="#223e5d" stroke-width="8" stroke-miterlimit="8" x1="192" y1="192" x2="192" y2="54"/>
     <circle class="clock-axis" cx="192" cy="192" r="12" fill="#fbf9e7"/>
     <g class="clock-second-hand" id="anim-clock-second-hand">
@@ -62,36 +62,21 @@
 
 
 <script>
-  // Clock on now.html
+  // Set the hands to the current time in Kraków; the <animateTransform>s above keep them moving.
+  const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Warsaw' }));
+  const seconds = now.getSeconds();
+  const minutes = now.getMinutes() * 60 + seconds;
+  const hours = (now.getHours() % 12) * 3600 + minutes;
 
-function changeTimeZone(date, timeZone) {
-  if (typeof date === 'string') {
-    return new Date(
-      new Date(date).toLocaleString('en-US', {
-        timeZone,
-      }),
-    );
+  const rotate = (selector: string, turn: number) =>
+    document.querySelector(selector)?.setAttribute('transform', `rotate(${360 * turn},192,192)`);
+
+  rotate('.clock-second-hand', seconds / 60);
+  rotate('.clock-minute-hand', minutes / 3600);
+  rotate('.clock-hour-hand', hours / 43200);
+
+  // Respect reduced motion: show the time at load, without moving hands.
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelector<SVGSVGElement>('.minimal-clock svg')?.pauseAnimations();
   }
-
-  return new Date(
-    date.toLocaleString('en-US', {
-      timeZone,
-    }),
-  );
-}
-
-const krkDate = changeTimeZone(new Date(), 'Europe/Warsaw');
-console.log(krkDate); // 👉️ "Sun Jan 16 2022 08:54:44"
-
-var seconds = krkDate.getSeconds();
-var minutes = krkDate.getMinutes();
-var hours = krkDate.getHours();
-hours = (hours > 12) ? hours - 12 : hours;
-minutes = (minutes * 60) + seconds;
-hours = (hours * 3600) + minutes;
-
-document.querySelector('.clock-second-hand')?.setAttribute('transform', 'rotate('+360*(seconds/60)+',192,192)');
-document.querySelector('.clock-minute-hand')?.setAttribute('transform', 'rotate('+360*(minutes/3600)+',192,192)');
-document.querySelector('.clock-hour-hand')?.setAttribute('transform', 'rotate('+360*(hours/43200)+',192,192)');
-
 </script>

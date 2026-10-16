@@ -1,24 +1,29 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
+import BaseHead, { type Props as HeadProps } from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
-const { title } = Astro.props;
+interface Props extends HeadProps {
+	bodyClass?: string;
+}
+
+const { bodyClass = 'page', ...head } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" class="light-theme">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead {...head} />
     <link rel="stylesheet" href="https://use.typekit.net/bxg6oqg.css">
   </head>
 
-  <body class="page">
+  <body class={bodyClass}>
 
     <Header />
 
-    <slot />
+    <main class="page-main">
+      <slot />
+    </main>
 
     <Footer />
 
