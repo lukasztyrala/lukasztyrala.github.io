@@ -5,12 +5,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev      # Start local dev server (localhost:4321)
-npm run build    # Build production site to ./dist/
-npm run preview  # Preview production build locally
+bun run dev      # Start local dev server (localhost:4321)
+bun run build    # Build production site to ./dist/
+bun run preview  # Preview production build locally
 ```
 
-No test or lint commands are configured. The scripts also run with `bun run …` (the local lockfile is `bun.lockb`). Astro 7 requires Node.js ≥ 22.12.
+No test or lint commands are configured. The package manager is **bun**, and the lockfile is the text `bun.lock`. Don't add a `package-lock.json` (it's gitignored): `withastro/action` would pick npm over bun if one existed. Astro 7 requires Node.js ≥ 22.12.
 
 ## Tech preferences
 
@@ -18,7 +18,9 @@ Keep the stack simple: vanilla CSS (modern native features are encouraged — co
 
 ## Deployment
 
-The site is published via **GitHub Pages** with the custom domain `lukasztyrala.pl`. Large static files (images, video, etc.) are served via **Backblaze B2** cloud storage — do not commit large binaries to the repo.
+The site is published via **GitHub Pages** with the custom domain `lukasztyrala.pl`. `.github/workflows/deploy.yml` builds every push to `main` with `withastro/action`, pinned to Node 24 and `bun@1.4.3`. When you upgrade bun locally, bump `package-manager` there too.
+
+**Workflow files are edited in the GitHub web UI, not pushed.** Pushes from this machine use an HTTPS token that may lack the `workflow` scope, and GitHub rejects any push that touches `.github/workflows/`. Don't commit changes to `.github/workflows/` locally. Prepare the new file content, edit it on github.com, then `git pull`. Large static files (images, video, etc.) are served via **Backblaze B2** cloud storage — do not commit large binaries to the repo.
 
 ## Architecture
 
